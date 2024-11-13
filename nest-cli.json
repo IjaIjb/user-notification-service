@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/user-notification-microservices/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/user-notification-microservices/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/user-notification-microservices",
+  "projects": {
+    "user-notification-microservices": {
+      "type": "application",
+      "root": "apps/user-notification-microservices",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-notification-microservices/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-notification-microservices/tsconfig.app.json"
+      }
+    },
+    "user-service": {
+      "type": "application",
+      "root": "apps/user-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-service/tsconfig.app.json"
+      }
+    },
+    "notification-service": {
+      "type": "application",
+      "root": "apps/notification-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/notification-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notification-service/tsconfig.app.json"
+      }
+    }
+  }
+}
